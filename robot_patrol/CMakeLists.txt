@@ -21,6 +21,7 @@ install(TARGETS
 # Install the launch directory so `ros2 launch` can find it
 install(DIRECTORY
   launch
+  rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
