@@ -12,7 +12,7 @@ def generate_launch_description():
     rviz_config_path = os.path.join(
         get_package_share_directory('robot_patrol'),
         'rviz',
-        'patrol.rviz'
+        'patrol_real-robot.rviz'
     )
 
     patrol_node = Node(

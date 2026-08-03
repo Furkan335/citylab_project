@@ -44,13 +44,13 @@ public:
     // Subscribe to the laser scanner. Every time a new LaserScan message
     // arrives, ROS2 will automatically call laser_callback() for us.
     scan_subscriber_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
-      "/fastbot_1/scan", 10,
+      "/scan", 10,
       std::bind(&Patrol::laser_callback, this, _1));
 
     // Publisher used to send velocity commands (linear + angular speed)
     // to the robot.
     cmd_vel_publisher_ = this->create_publisher<geometry_msgs::msg::Twist>(
-      "/fastbot_1/cmd_vel", 10);
+      "/cmd_vel", 10);
 
     // A timer that fires every 100 ms (10 Hz) and calls control_loop().
     // This is what actually publishes cmd_vel messages, at a steady rate,
